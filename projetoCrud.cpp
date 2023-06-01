@@ -20,6 +20,7 @@ int main()
 
     do
     {
+        manga.id = 0;
         cout << "\t\t\t MENU PRINCIPAL" << endl;
         cout << "\t 1 - Incluir Manga" << endl;
         cout << "\t 2 - Buscar Manga" << endl;
@@ -78,6 +79,12 @@ int main()
             switch (opcao) 
             {
             case 1:
+                cout << "Digite o id do manga" << endl;
+                cin >> manga.id;
+
+                for (int i = 0; i < pos; i++){
+                    
+                }
                 break;
             case 2:
                 break;
