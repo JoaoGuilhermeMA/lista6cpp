@@ -16,7 +16,7 @@ int main()
 {
     int opcao, pos = 0;
     Tmanga manga, colecao[10];
-    bool existeManga=false;
+    bool existeManga = false;
 
     do
     {
@@ -40,14 +40,15 @@ int main()
                 cout << "\tID: ";
                 cin >> manga.id;
                 existeManga = false;
-                for (int  i = 0; i < 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    if(manga.id == colecao[i].id){
+                    if (manga.id == colecao[i].id)
+                    {
                         existeManga = true;
                         break;
                     }
                 }
-                
+
             } while (existeManga);
             getchar();
             cout << "\n\tNOME: ";
@@ -72,21 +73,50 @@ int main()
             cout << "\t2 - NOME" << endl;
             cout << "\t3 - GENERO" << endl;
             cout << "\t4 - AUTOR" << endl;
-            cout << "\t5 - QUANTIDADE" << endl;
+            cout << "\t5 - QUANTIDADE" << endl; 
             cout << "\t6 - PREÇO UNIDADE" << endl;
             cout << "\t0 - VOLTAR" << endl;
             cin >> opcao;
-            switch (opcao) 
+            getchar();
+            switch (opcao)
             {
             case 1:
-                cout << "Digite o id do manga" << endl;
+                cout << "Digite o id do manga:" << endl;
                 cin >> manga.id;
-
-                for (int i = 0; i < pos; i++){
-                    
+                for (int i = 0; i < pos; i++)
+                {
+                    if (manga.id == colecao[i].id)
+                    {
+                        cout << "\t\t\t MANGA ENCONTRADA" << endl;
+                        cout << "\tID: " << colecao[i].id << endl;
+                        cout << "\tNOME: " << colecao[i].nome << endl;
+                        cout << "\tGENERO: " << colecao[i].genero << endl;
+                        cout << "\tAUTOR: " << colecao[i].autor << endl;
+                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                             << endl;
+                        cout << "\e[H\e[2J";
+                        break;
+                    }
                 }
                 break;
             case 2:
+                cout << "Digite o nome do manga:" << endl;
+                getline(cin, manga.nome);
+                for (int i = 0; i < pos; i++)
+                {
+                    if (manga.nome == colecao[i].nome)
+                    {
+                        cout << "\t\t\t MANGA ENCONTRADA" << endl;
+                        cout << "\tID: " << colecao[i].id << endl;
+                        cout << "\tNOME: " << colecao[i].nome << endl;
+                        cout << "\tGENERO: " << colecao[i].genero << endl;
+                        cout << "\tAUTOR: " << colecao[i].autor << endl;
+                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                             << endl;
+                    }
+                }
                 break;
             case 3:
                 break;
@@ -99,18 +129,19 @@ int main()
             default:
                 break;
             }
-            
+
             break;
         case 5:
             cout << "\t\t\t LISTA DE MANGA" << endl;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < pos; i++)
             {
                 cout << "\tID: " << colecao[i].id << endl;
                 cout << "\tNOME: " << colecao[i].nome << endl;
                 cout << "\tGENERO: " << colecao[i].genero << endl;
                 cout << "\tAUTOR: " << colecao[i].autor << endl;
                 cout << "\tQUANTIDADE UNIDADE: " << colecao[i].qntd << endl;
-                cout << "\tPREÇO: " << colecao[i].preco << endl << endl;
+                cout << "\tPREÇO: " << colecao[i].preco << endl
+                     << endl;
             }
             cin >> opcao;
             cout << "\e[H\e[2J";
