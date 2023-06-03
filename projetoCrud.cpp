@@ -85,16 +85,20 @@ int main()
                 {
                     if (manga.id == colecao[i].id)
                     {
-                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
-                        cout << "\tID: " << colecao[i].id << endl;
-                        cout << "\tNOME: " << colecao[i].nome << endl;
-                        cout << "\tGENERO: " << colecao[i].genero << endl;
-                        cout << "\tAUTOR: " << colecao[i].autor << endl;
-                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
-                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
-                             << endl;
-                        cin >> quebrar;
-                        cout << "\e[H\e[2J";
+                        if (colecao[i].id > 0)
+                        {
+                            cout << "\t\t\t MANGA ENCONTRADO" << endl;
+                            cout << "\tID: " << colecao[i].id << endl;
+                            cout << "\tNOME: " << colecao[i].nome << endl;
+                            cout << "\tGENERO: " << colecao[i].genero << endl;
+                            cout << "\tAUTOR: " << colecao[i].autor << endl;
+                            cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                            cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                                 << endl;
+                            cout << "0 - sair" << endl;
+                            cin >> quebrar;
+                            cout << "\e[H\e[2J";
+                        }
                         break;
                     }
                 }
@@ -105,19 +109,24 @@ int main()
                 cout << "\e[H\e[2J";
                 for (int i = 0; i < pos; i++)
                 {
-                    if (manga.nome == colecao[i].nome)
+                    if (colecao[i].id > 0)
                     {
-                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
-                        cout << "\tID: " << colecao[i].id << endl;
-                        cout << "\tNOME: " << colecao[i].nome << endl;
-                        cout << "\tGENERO: " << colecao[i].genero << endl;
-                        cout << "\tAUTOR: " << colecao[i].autor << endl;
-                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
-                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
-                             << endl;
+                        if (manga.nome == colecao[i].nome)
+                        {
+                            cout << "\t\t\t MANGA ENCONTRADO" << endl;
+                            cout << "\tID: " << colecao[i].id << endl;
+                            cout << "\tNOME: " << colecao[i].nome << endl;
+                            cout << "\tGENERO: " << colecao[i].genero << endl;
+                            cout << "\tAUTOR: " << colecao[i].autor << endl;
+                            cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                            cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                                 << endl;
+                        }
                     }
                 }
+                cout << "0 - sair" << endl;
                 cin >> quebrar;
+                cout << "\e[H\e[2J";
                 break;
             case 3:
                 cout << "Digite o genero do manga: " << endl;
@@ -125,18 +134,22 @@ int main()
                 cout << "\e[H\e[2J";
                 for (int i = 0; i < pos; i++)
                 {
-                    if (manga.genero == colecao[i].genero)
+                    if (colecao[i].id > 0)
                     {
-                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
-                        cout << "\tID: " << colecao[i].id << endl;
-                        cout << "\tNOME: " << colecao[i].nome << endl;
-                        cout << "\tGENERO: " << colecao[i].genero << endl;
-                        cout << "\tAUTOR: " << colecao[i].autor << endl;
-                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
-                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
-                             << endl;
+                        if (manga.genero == colecao[i].genero)
+                        {
+                            cout << "\t\t\t MANGA ENCONTRADO" << endl;
+                            cout << "\tID: " << colecao[i].id << endl;
+                            cout << "\tNOME: " << colecao[i].nome << endl;
+                            cout << "\tGENERO: " << colecao[i].genero << endl;
+                            cout << "\tAUTOR: " << colecao[i].autor << endl;
+                            cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                            cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                                 << endl;
+                        }
                     }
                 }
+                cout << "0 - sair" << endl;
                 cin >> quebrar;
                 break;
             case 4:
@@ -145,18 +158,22 @@ int main()
                 cout << "\e[H\e[2J";
                 for (int i = 0; i < pos; i++)
                 {
-                    if (manga.autor == colecao[i].autor)
+                    if (colecao[i].id > 0)
                     {
-                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
-                        cout << "\tID: " << colecao[i].id << endl;
-                        cout << "\tNOME: " << colecao[i].nome << endl;
-                        cout << "\tGENERO: " << colecao[i].genero << endl;
-                        cout << "\tAUTOR: " << colecao[i].autor << endl;
-                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
-                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
-                             << endl;
+                        if (manga.autor == colecao[i].autor)
+                        {
+                            cout << "\t\t\t MANGA ENCONTRADO" << endl;
+                            cout << "\tID: " << colecao[i].id << endl;
+                            cout << "\tNOME: " << colecao[i].nome << endl;
+                            cout << "\tGENERO: " << colecao[i].genero << endl;
+                            cout << "\tAUTOR: " << colecao[i].autor << endl;
+                            cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                            cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                                 << endl;
+                        }
                     }
                 }
+                cout << "0 - sair" << endl;
                 cin >> quebrar;
                 break;
             case 6:
@@ -169,17 +186,23 @@ int main()
         case 3:
             cout << "\t\t\t ALTERAR UM MANGA" << endl;
             cout << "\n\tQual manga deseja alterar? " << endl;
+            cout << "\t0 - sair" << endl;
             for (int i = 0; i < pos; i++)
             {
-                cout << "\tID: " << colecao[i].id << " | NOME: " << colecao[i].nome << endl;
+                if (colecao[i].id > 0)
+                {
+                    cout << "\tID: " << colecao[i].id << " | NOME: " << colecao[i].nome << endl;
+                }
             }
             do
             {
-                cout << "\nQual manga deseja alterar? (escolha o id)" << endl;
                 cin >> manga.id;
             } while (manga.id > pos || manga.id < 0);
             cout << "\e[H\e[2J";
-
+            if (manga.id == 0)
+            {
+                break;
+            }
             do
             {
                 cout << "O que deseja alterar?" << endl;
@@ -233,19 +256,44 @@ int main()
                     }
                 }
             } while (quebrar != 6);
-
+            break;
+        case 4:
+            do
+            {
+                cout << "\tQual manga deseja excluir? (escolha o id)" << endl;
+                for (int i = 0; i < pos; i++)
+                {
+                    if (colecao[i].id > 0)
+                    {
+                        cout << "\tID: " << colecao[i].id << " | NOME: " << colecao[i].nome << endl;
+                    }
+                }
+                cout << "\t0 - sair" << endl;
+                cin >> quebrar;
+                for (int i = 0; i < pos; i++)
+                {
+                    if (quebrar == colecao[i].id)
+                    {
+                        colecao[i].id = 0;
+                    }
+                }
+            } while (quebrar != 0);
+            cout << "\e[H\e[2J";
             break;
         case 5:
             cout << "\t\t\t LISTA DE MANGA" << endl;
             for (int i = 0; i < pos; i++)
             {
-                cout << "\tID: " << colecao[i].id << endl;
-                cout << "\tNOME: " << colecao[i].nome << endl;
-                cout << "\tGENERO: " << colecao[i].genero << endl;
-                cout << "\tAUTOR: " << colecao[i].autor << endl;
-                cout << "\tQUANTIDADE UNIDADE: " << colecao[i].qntd << endl;
-                cout << "\tPREÇO: " << colecao[i].preco << endl
-                     << endl;
+                if (colecao[i].id > 0)
+                {
+                    cout << "\tID: " << colecao[i].id << endl;
+                    cout << "\tNOME: " << colecao[i].nome << endl;
+                    cout << "\tGENERO: " << colecao[i].genero << endl;
+                    cout << "\tAUTOR: " << colecao[i].autor << endl;
+                    cout << "\tQUANTIDADE UNIDADE: " << colecao[i].qntd << endl;
+                    cout << "\tPREÇO: " << colecao[i].preco << endl
+                         << endl;
+                }
             }
             cin >> opcao;
             cout << "\e[H\e[2J";
