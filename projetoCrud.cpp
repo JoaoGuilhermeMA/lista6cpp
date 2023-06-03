@@ -14,7 +14,7 @@ struct Tmanga
 
 int main()
 {
-    int opcao, pos = 0;
+    int opcao, pos = 0, quebrar;
     Tmanga manga, colecao[10];
     bool existeManga = false;
 
@@ -73,8 +73,6 @@ int main()
             cout << "\t2 - NOME" << endl;
             cout << "\t3 - GENERO" << endl;
             cout << "\t4 - AUTOR" << endl;
-            cout << "\t5 - QUANTIDADE" << endl; 
-            cout << "\t6 - PREÇO UNIDADE" << endl;
             cout << "\t0 - VOLTAR" << endl;
             cin >> opcao;
             getchar();
@@ -87,7 +85,7 @@ int main()
                 {
                     if (manga.id == colecao[i].id)
                     {
-                        cout << "\t\t\t MANGA ENCONTRADA" << endl;
+                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
                         cout << "\tID: " << colecao[i].id << endl;
                         cout << "\tNOME: " << colecao[i].nome << endl;
                         cout << "\tGENERO: " << colecao[i].genero << endl;
@@ -95,6 +93,7 @@ int main()
                         cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
                         cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
                              << endl;
+                        cin >> quebrar;
                         cout << "\e[H\e[2J";
                         break;
                     }
@@ -103,11 +102,12 @@ int main()
             case 2:
                 cout << "Digite o nome do manga:" << endl;
                 getline(cin, manga.nome);
+                cout << "\e[H\e[2J";
                 for (int i = 0; i < pos; i++)
                 {
                     if (manga.nome == colecao[i].nome)
                     {
-                        cout << "\t\t\t MANGA ENCONTRADA" << endl;
+                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
                         cout << "\tID: " << colecao[i].id << endl;
                         cout << "\tNOME: " << colecao[i].nome << endl;
                         cout << "\tGENERO: " << colecao[i].genero << endl;
@@ -117,18 +117,122 @@ int main()
                              << endl;
                     }
                 }
+                cin >> quebrar;
                 break;
             case 3:
+                cout << "Digite o genero do manga: " << endl;
+                getline(cin, manga.genero);
+                cout << "\e[H\e[2J";
+                for (int i = 0; i < pos; i++)
+                {
+                    if (manga.genero == colecao[i].genero)
+                    {
+                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
+                        cout << "\tID: " << colecao[i].id << endl;
+                        cout << "\tNOME: " << colecao[i].nome << endl;
+                        cout << "\tGENERO: " << colecao[i].genero << endl;
+                        cout << "\tAUTOR: " << colecao[i].autor << endl;
+                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                             << endl;
+                    }
+                }
+                cin >> quebrar;
                 break;
             case 4:
-                break;
-            case 5:
+                cout << "Digite do autor do manga: " << endl;
+                getline(cin, manga.genero);
+                cout << "\e[H\e[2J";
+                for (int i = 0; i < pos; i++)
+                {
+                    if (manga.autor == colecao[i].autor)
+                    {
+                        cout << "\t\t\t MANGA ENCONTRADO" << endl;
+                        cout << "\tID: " << colecao[i].id << endl;
+                        cout << "\tNOME: " << colecao[i].nome << endl;
+                        cout << "\tGENERO: " << colecao[i].genero << endl;
+                        cout << "\tAUTOR: " << colecao[i].autor << endl;
+                        cout << "\tQUANTIDADE: " << colecao[i].qntd << endl;
+                        cout << "\tPREÇO UNIDADE: " << colecao[i].preco << endl
+                             << endl;
+                    }
+                }
+                cin >> quebrar;
                 break;
             case 6:
                 break;
             default:
                 break;
             }
+            cout << "\e[H\e[2J";
+            break;
+        case 3:
+            cout << "\t\t\t ALTERAR UM MANGA" << endl;
+            cout << "\n\tQual manga deseja alterar? " << endl;
+            for (int i = 0; i < pos; i++)
+            {
+                cout << "\tID: " << colecao[i].id << " | NOME: " << colecao[i].nome << endl;
+            }
+            do
+            {
+                cout << "\nQual manga deseja alterar? (escolha o id)" << endl;
+                cin >> manga.id;
+            } while (manga.id > pos || manga.id < 0);
+            cout << "\e[H\e[2J";
+
+            do
+            {
+                cout << "O que deseja alterar?" << endl;
+                cout << "1 - nome" << endl;
+                cout << "2 - genero" << endl;
+                cout << "3 - autor" << endl;
+                cout << "4 - quantidade" << endl;
+                cout << "5 - preco unidade" << endl;
+                cout << "6 - sair" << endl;
+                cin >> quebrar;
+                getchar();
+                cout << "\e[H\e[2J";
+                for (int i = 0; i < pos; i++)
+                {
+                    if (colecao[i].id == manga.id)
+                    {
+                        switch (quebrar)
+                        {
+                        case 1:
+                            cout << "Digite o novo nome:" << endl;
+                            getline(cin, manga.nome);
+                            colecao[i].nome = manga.nome;
+                            break;
+                        case 2:
+                            cout << "Digite o novo genero: " << endl;
+                            getline(cin, manga.genero);
+                            colecao[i].genero = manga.genero;
+                            break;
+                        case 3:
+                            cout << "Digite o novo autor" << endl;
+                            getline(cin, manga.autor);
+                            colecao[i].autor = manga.autor;
+                            break;
+                        case 4:
+                            cout << "Digite a nova quantidade:" << endl;
+                            cin >> manga.qntd;
+                            getchar();
+                            colecao[i].qntd = manga.qntd;
+                            break;
+                        case 5:
+                            cout << "Digite o novo preco da unidade" << endl;
+                            cin >> manga.preco;
+                            getchar();
+                            colecao[i].preco = manga.preco;
+                            break;
+                        default:
+                            break;
+                        }
+                        cout << "\e[H\e[2J";
+                        break;
+                    }
+                }
+            } while (quebrar != 6);
 
             break;
         case 5:
