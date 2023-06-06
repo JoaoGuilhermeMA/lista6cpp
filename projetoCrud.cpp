@@ -274,6 +274,7 @@ int main()
                     if (quebrar == colecao[i].id)
                     {
                         colecao[i].id = 0;
+                        pos--;  
                     }
                 }
             } while (quebrar != 0);
