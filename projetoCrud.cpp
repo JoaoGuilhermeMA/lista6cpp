@@ -14,9 +14,8 @@ struct Tmanga
 
 int main()
 {
-    int opcao, pos = 0, quebrar;
+    int opcao, pos = 0, quebrar, aux = 0;
     Tmanga manga, colecao[10];
-    bool existeManga = false;
 
     do
     {
@@ -35,22 +34,17 @@ int main()
         {
         case 1:
             cout << "\t\t\t CADASTRO DE MANGA" << endl;
-            do
+            for (int i = 0; i < pos+1; i++)
             {
-                cout << "\tID: ";
-                cin >> manga.id;
-                existeManga = false;
-                for (int i = 0; i < 10; i++)
+                if (colecao[i].id == 0)
                 {
-                    if (manga.id == colecao[i].id)
-                    {
-                        existeManga = true;
-                        break;
-                    }
+                    aux = i;
+                    break;
                 }
-
-            } while (existeManga);
+            }
+            manga.id = aux + 1;
             getchar();
+            cout << "\tID: " << manga.id << endl;
             cout << "\n\tNOME: ";
             getline(cin, manga.nome);
             cout << "\n\tGENERO: ";
@@ -76,6 +70,7 @@ int main()
             cout << "\t0 - VOLTAR" << endl;
             cin >> opcao;
             getchar();
+            cout << "\e[H\e[2J";
             switch (opcao)
             {
             case 1:
@@ -129,6 +124,7 @@ int main()
                 cout << "\e[H\e[2J";
                 break;
             case 3:
+                cout << "\e[H\e[2J";
                 cout << "Digite o genero do manga: " << endl;
                 getline(cin, manga.genero);
                 cout << "\e[H\e[2J";
