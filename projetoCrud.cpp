@@ -33,6 +33,9 @@ int main()
         switch (opcao)
         {
         case 1:
+            if(pos == 10){
+                break;
+            }
             cout << "\t\t\t CADASTRO DE MANGA" << endl;
             for (int i = 0; i < pos+1; i++)
             {
